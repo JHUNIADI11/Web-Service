@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
-use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-
 
 class CustomerController extends Controller
 {
@@ -39,7 +37,7 @@ class CustomerController extends Controller
    }
    public function store(Request $request)
    {
-       $validate= validator::make($request->all(),[
+       $validate= Validator::make($request->all(),[
            'name'=>'require',
            'phone'=>'require',
            'email'=>'require',

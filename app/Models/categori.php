@@ -13,8 +13,8 @@ class categori extends Model
     protected $fillable = ['id','name'];
 
     //relasi dari product to caregori
-    // public function product()
-    // {
-    //     return $this->hasMany(Product::class,'categori_id');
-    // }
+    public function product()
+    {
+        return $this->hasMany(Product::class,'categori_id');
+    }
 }
